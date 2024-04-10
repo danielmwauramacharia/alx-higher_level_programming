@@ -1,2 +1,6 @@
 #!/bin/bash
-python3 -m compileall -b $PYFILE $PYFILEc
+PYFILE="your_script.py"
+echo "Compiling $PYFILE ..."
+python3 -c "import py_compile
+output = \"$PYFILE\" + \"c\"
+py_compile.compile(\"$PYFILE\", output)"

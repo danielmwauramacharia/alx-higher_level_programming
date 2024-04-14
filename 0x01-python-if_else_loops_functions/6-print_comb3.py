@@ -7,6 +7,5 @@ for i in range(10):
         if i < 8:
             print("{}{}, ".format(i, n), end='')
         else:
-            print("{}{}".format(i, n), end='')
+            print("{}{}{}".format(i, n, "\n"), end='')
     x += 1
-print("\n")

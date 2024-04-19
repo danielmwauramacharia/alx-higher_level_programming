@@ -3,7 +3,7 @@ import sys
 length = len(sys.argv) - 1
 if __name__ == "__main__":
     if length == 0:
-        print("{} argument.".format(length))
+        print("{} arguments.".format(length))
     if length == 1:
         print("{} argument:".format(length))
     elif length > 1:

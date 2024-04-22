@@ -8,4 +8,5 @@ def add_tuple(tuple_a=(), tuple_b=()):
         shorter = tuple_a
     for x, value in enumerate(shorter):
         result[x] += value
-    return tuple(result)
+    final = result[0:2]
+    return tuple(final)

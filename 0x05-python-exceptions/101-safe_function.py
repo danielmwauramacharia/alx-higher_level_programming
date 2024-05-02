@@ -7,10 +7,10 @@ class RaiseError(Exception):
 
 
 def safe_function(fct, *args):
-    result = 0
+    result = None
     try:
         result = fct(*args)
-        if not result:
+        if result is None and len(args) != 0:
             raise RaiseError
         return result
     except Exception as ex:

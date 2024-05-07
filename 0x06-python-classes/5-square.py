@@ -37,4 +37,3 @@ class Square:
                 print()
         else:
             print()
-

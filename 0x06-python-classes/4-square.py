@@ -15,7 +15,7 @@ class Square:
         """Return the controlled size"""
         return self.__size
 
-    @size.getter
+    @size.setter
     def size(self, value):
         """The controls for the size"""
         if not isinstance(value, int):

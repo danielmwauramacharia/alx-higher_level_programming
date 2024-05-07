@@ -8,25 +8,13 @@ class Square:
 
     def __init__(self, size=0, position=(0, 0)):
         """Initialization of Instance attributes """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
         """Return the controlled size"""
         return self.__size
-
-    @property
-    def position(self):
-        """Return the controlled size"""
-        return self.__position
-
-    @position.setter
-    def position(self, value):
-        """The controls for the size"""
-        if not (isinstance(value, tuple) and len(value) == 2):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = value
 
     @size.setter
     def size(self, value):
@@ -36,6 +24,18 @@ class Square:
         if value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
+
+    @property
+    def position(self):
+        """Return the controlled size"""
+        return self.__position
+
+    @position.setter
+    def position(self, value):
+        """The controls for the size"""
+        if not (isinstance(value, tuple) and len(value) == 2 and all(isinstance(x, int) for x in value) and all(y >= 0 for y in value)):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        self.__position = value
 
     def area(self):
         """Calculate the area of the Square"""

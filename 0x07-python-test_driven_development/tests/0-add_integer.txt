@@ -1,9 +1,9 @@
 This is a doctest for "add_integer" module
 ===========================================
 
-first import 'add_integer' function from 'add' module
+first import 'add_integer' function from '0-add_integer' module
 
->>> from add import add_integer
+>>> from 0-add_integer import add_integer
 
 now use it: the function takes two parameters
 example add_integer(a, b=98)

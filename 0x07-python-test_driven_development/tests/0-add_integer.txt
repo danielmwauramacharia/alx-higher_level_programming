@@ -1,9 +1,12 @@
+"""
 This is a doctest for "add_integer" module
 ===========================================
 
 first import 'add_integer' function from '0-add_integer' module
 
->>> from 0-add_integer import add_integer
+>>> with open("0-add_integer.py", "r") as f:
+...     code = f.read()
+>>> exec(code)
 
 now use it: the function takes two parameters
 example add_integer(a, b=98)

@@ -5,14 +5,11 @@
 def matrix_divided(matrix, div):
     """A function that takes a matrix and devide it by div"""
     for item in matrix:
-        # if item != item:
-        #     raise TypeError(
-        #         "matrix must be a matrix (list of lists) of integers/floats")
-
         for value in item:
             if value != value or not isinstance(value, (float, int)):
                 raise TypeError(
-                    "matrix must be a matrix (list of lists) of integers/floats")
+                    "matrix must be a matrix (list of lists) "
+                    "of integers/floats")
 
     for _, items in enumerate(matrix):
         if len(matrix[0]) != len(items):

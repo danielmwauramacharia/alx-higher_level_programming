@@ -1,16 +1,23 @@
 #!/usr/bin/python3
-""""Working with Square"""
+"""Working with multiline string"""
 
 
-def print_square(size=0):
-    """Print Square using # for the given Size"""
-    if not isinstance(size, int):
-        raise TypeError("size must be an integer")
-    if size < 0:
-        raise ValueError("size must be >= 0")
-    if isinstance(size, float) and size < 0:
-        raise TypeError("size must be an integer")
-    for _ in range(size):
-        for _ in range(size):
-            print("#", end='')
-        print()
+def text_indentation(text=""):
+    if not isinstance(text, str):
+        raise TypeError("text must be a string")
+    words = text.split()
+    for i, word in enumerate(words):
+        if word.endswith(('.', ':', '?')):
+            print(word)
+            for _ in range(2):
+                print()
+        elif any(chr in ('.', '?', ':') for chr in word):
+            for cha in word:
+                print(cha, end='')
+                if cha in ('.', '?', ':'):
+                    for _ in range(3):
+                        print()
+        else:
+            print(word, end='')
+            if i < len(words) - 1:
+                print(' ', end='')

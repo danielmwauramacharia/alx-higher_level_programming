@@ -1,0 +1,33 @@
+"""
+Testing our module 5-text_indentation
+>>> with open("5-text_indentation.py", "r") as f:
+...     code = f.read()
+>>> exec(code)
+>>> text_indentation("Holberton School")
+Holberton School
+>>> text_indentation("Holberton.School")
+Holberton.
+<BLANKLINE>
+<BLANKLINE>
+School
+>>> text_indentation("Holberton. School? How are you: John")
+Holberton.
+<BLANKLINE>
+<BLANKLINE>
+School?
+<BLANKLINE>
+<BLANKLINE>
+How are you:
+<BLANKLINE>
+<BLANKLINE>
+John
+>>> text_indentation(12)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+>>> text_indentation("\n\n")
+>>> text_indentation()
+>>> text_indentation("Holberton")
+Holberton
+
+"""

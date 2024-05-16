@@ -9,13 +9,13 @@ def text_indentation(text=""):
     for i, word in enumerate(words):
         if word.endswith(('.', ':', '?')):
             print(word)
-            for _ in range(2):
+            for _ in range(1):
                 print()
         elif any(chr in ('.', '?', ':') for chr in word):
             for cha in word:
                 print(cha, end='')
                 if cha in ('.', '?', ':'):
-                    for _ in range(3):
+                    for _ in range(2):
                         print()
         else:
             print(word, end='')

@@ -8,17 +8,13 @@ Holberton School
 >>> text_indentation("Holberton.School")
 Holberton.
 <BLANKLINE>
-<BLANKLINE>
 School
 >>> text_indentation("Holberton. School? How are you: John")
 Holberton.
 <BLANKLINE>
-<BLANKLINE>
 School?
 <BLANKLINE>
-<BLANKLINE>
 How are you:
-<BLANKLINE>
 <BLANKLINE>
 John
 >>> text_indentation(12)

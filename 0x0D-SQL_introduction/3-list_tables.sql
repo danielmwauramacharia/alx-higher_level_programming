@@ -1,4 +1,5 @@
 #!/bin/bash
 -- list all tables in a database
-mysql -e "USE $mysql;  SHOW TABLES;"
+database_name=$mysql
+mysql -e "USE $database_name;  SHOW TABLES;"
 

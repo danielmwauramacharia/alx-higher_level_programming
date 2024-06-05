@@ -19,13 +19,13 @@ array([[19, 22,  5],
 >>> lazy_matrix_mul(m_a, m_b)
 Traceback (most recent call last):
     ...
-TypeError: m_a must be a list
+TypeError: Scalar operands are not allowed, use '*' instead
 >>> m_a = [[5, 6], [7, 8]]
 >>> m_b = "Holberton"
 >>> lazy_matrix_mul(m_a, m_b)
 Traceback (most recent call last):
     ...
-TypeError: m_b must be a list
+TypeError: Scalar operands are not allowed, use '*' instead
 >>> m_a = [1, 2, 3, 4]
 >>> m_b = [[5, 6], [7, 8]]
 >>> lazy_matrix_mul(m_a, m_b)
@@ -43,43 +43,43 @@ TypeError: m_b must be a list of lists
 >>> lazy_matrix_mul(m_a, m_b)
 Traceback (most recent call last):
     ...
-ValueError: m_a can't be empty
+ValueError: shapes (1, 0) and (2, 2) not aligned: 0 (dim 1) != 2 (dim 0)
 >>> m_a = [[5, 6], [7, 8]]
 >>> m_b = [[]]
 >>> lazy_matrix_mul(m_a, m_b)
 Traceback (most recent call last):
     ...
-ValueError: m_b can't be empty
+ValueError: shapes (1, 0) and (2, 2) not aligned: 0 (dim 1) != 2 (dim 0)
 >>> m_a = [[5, "6"], [7, 8]]
 >>> m_b = [[5, 6], [7, 8]]
 >>> lazy_matrix_mul(m_a, m_b)
 Traceback (most recent call last):
     ...
-TypeError: m_a should contain only integers or floats
+TypeError: invalid data type for einsum
 >>> m_a = [[5, 6], [7, 8]]
 >>> m_b = [[5, "6"], [7, 8]]
 >>> lazy_matrix_mul(m_a, m_b)
 Traceback (most recent call last):
     ...
-TypeError: m_b should contain only integers or floats
+TypeError: invalid data type for einsum
 >>> m_a = [[5, 6, 10], [7, 8]]
 >>> m_b = [[5, 6], [7, 8]]
 >>> lazy_matrix_mul(m_a, m_b)
 Traceback (most recent call last):
     ...
-TypeError: each row of m_a must be of the same size
+TypeError: setting an array element with a sequence.
 >>> m_a = [[5, 6], [7, 8]]
 >>> m_b = [[5, 6, 1], [7, 8]]
 >>> lazy_matrix_mul(m_a, m_b)
 Traceback (most recent call last):
     ...
-TypeError: each row of m_b must be of the same size
+TypeError: setting an array element with a sequence.
 >>> m_a = [[1, 2, 3], [3, 4, 5]]
 >>> m_b = [[1, 2], [3, 4]]
 >>> lazy_matrix_mul(m_a, m_b)
 Traceback (most recent call last):
     ...
-ValueError: m_a and m_b can't be multiplied
+ValueError: shapes (2, 3) and (2, 2) not aligned: 3 (dim 1) != 2 (dim 0)
 >>> lazy_matrix_mul()
 Traceback (most recent call last):
     ...

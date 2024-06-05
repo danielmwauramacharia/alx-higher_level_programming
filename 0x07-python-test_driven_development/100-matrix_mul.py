@@ -2,7 +2,7 @@
 """Working with matrices"""
 
 
-def matrix_mul(m_a=[[1]], m_b=[[1]]):
+def matrix_mul(m_a, m_b):
     """A function that multiplies two matrices"""
     if not isinstance(m_a, list):
         raise TypeError("m_a must be a list")

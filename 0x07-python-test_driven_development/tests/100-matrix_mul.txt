@@ -86,10 +86,5 @@ TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
 Traceback (most recent call last):
     ...
 TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
->>> m_b = [[1, 2, 3], [3, 4, 5]]
->>> matrix_mul(m_b)
-Traceback (most recent call last):
-    ...
-TypeError: matrix_mul() missing 1 required positional argument: 'm_a'
 
 """

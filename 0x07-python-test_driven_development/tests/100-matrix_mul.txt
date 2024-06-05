@@ -22,7 +22,7 @@ TypeError: m_a must be a list
 >>> matrix_mul(m_a, m_b)
 Traceback (most recent call last):
     ...
-TypeError: m_b must be a list of lists
+TypeError: m_b must be a list
 >>> m_a = [1, 2, 3, 4]
 >>> m_b = [[5, 6], [7, 8]]
 >>> matrix_mul(m_a, m_b)

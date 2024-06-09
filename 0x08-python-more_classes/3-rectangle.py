@@ -55,11 +55,3 @@ class Rectangle:
             for _ in range(self.height):
                 rect += "#" * self.width + '\n'
         return rect.strip()
-
-    def __repr__(self):
-        """String representation of our object"""
-        recta = ""
-        if self.height != 0 or self.width != 0:
-            for _ in range(self.height):
-                recta += "#" * self.width + '\n'
-        return recta.strip()

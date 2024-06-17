@@ -9,6 +9,10 @@ This is a test of the Matrix devide function
 True
 >>> hasattr(bg, "area")
 True
+>>> bg.area()
+Traceback (most recent call last):
+    ...
+Exception: area() is not implemented
 >>> hasattr(bg, "integer_validator")
 True
 >>> bg.integer_validator("age")

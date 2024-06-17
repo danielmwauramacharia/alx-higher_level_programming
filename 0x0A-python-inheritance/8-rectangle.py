@@ -4,6 +4,7 @@ Module that defines class rectangle based on class base geometry
 
 Its part of geometry package
 """
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):

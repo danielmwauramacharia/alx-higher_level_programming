@@ -1,0 +1,45 @@
+"""
+This is a test of the Matrix devide function
+
+>>> with open("1-my_list.py", "r") as f:
+...     code = f.read()
+>>> exec(code) 
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> my_list1 = MyList()
+>>> my_list1.append(-1)
+>>> my_list1.append(-4)
+>>> my_list1.append(-2)
+>>> my_list1.append(-3)
+>>> my_list1.append(-5)
+>>> print(my_list1)
+[-1, -4, -2, -3, -5]
+>>> my_list1.print_sorted()
+[-5, -4, -3, -2, -1]
+>>> print(str(my_list1))
+[-1, -4, -2, -3, -5]
+>>> print(isinstance(my_list1, MyList))
+True
+>>> print(isinstance(my_list1, list))
+True
+>>> 
+>>> my_list2 = MyList()
+>>> print(my_list2)
+[]
+>>> my_list2.print_sorted()
+[]
+>>> print(issubclass(MyList, list))
+True
+>>> print(issubclass(list, MyList))
+False
+
+
+"""

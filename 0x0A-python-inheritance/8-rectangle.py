@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""defining a rectangle"""
+"""rectangle documentation"""
 
 
 class Rectangle(BaseGeometry):
-    """Geometry: Rectangle"""
+    """Geometry Rectangle"""
 
     def __init__(self, width, height):
         """Instantiation"""

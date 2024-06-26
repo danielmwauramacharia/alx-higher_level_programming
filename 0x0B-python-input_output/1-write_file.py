@@ -4,10 +4,6 @@
 
 def write_file(filename="", text=""):
     """A function that writes text to a file"""
-    with open(filename, mode="w", encoding="utf-8"):
-        filename.write(text)
-        count = 0
-        for words in filename:
-            for _ in words:
-                count += 1
+    with open(filename, mode="w", encoding="utf-8") as objFile:
+        count = objFile.write(text)
     return count

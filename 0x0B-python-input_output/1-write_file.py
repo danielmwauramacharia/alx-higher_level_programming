@@ -10,4 +10,4 @@ def write_file(filename="", text=""):
         for words in filename:
             for _ in words:
                 count += 1
-        return count
+    return count

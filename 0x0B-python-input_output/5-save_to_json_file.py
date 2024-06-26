@@ -9,9 +9,7 @@ def save_to_json_file(my_obj, filename):
 
     Using json representation.
     """
-    if isinstance(my_obj, set):
-        my_obj = list(my_obj)
     jsonObject = json.dumps(my_obj)
-    with open(filename, mode="w", encoding="utf-8") as fileObj:
+    with open(filename, mode="a", encoding="utf-8") as fileObj:
         fileObj.write(jsonObject)
     return filename

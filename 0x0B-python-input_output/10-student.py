@@ -14,7 +14,9 @@ class Student():
     def to_json(self, attr=None):
         """"Returns the attributes of an instance in a dict"""
         data = vars(self)
-        if isinstance(attr, list) and len(attr) > 1:
+        if isinstance(attr, list):
+            if len(attr) == 0:
+                return {}
             data_copy = dict(data)
             data_list = {}
             for item in attr:

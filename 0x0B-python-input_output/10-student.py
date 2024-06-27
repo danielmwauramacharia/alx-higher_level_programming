@@ -19,7 +19,7 @@ class Student():
         if isinstance(attr, list):
             if len(attr) != 0:
                 for item in attr:
-                    for key, value in data_copy.values():
+                    for key, value in data_copy.items():
                         if key == item:
                             data_list.update({key: value})
                 return data_list

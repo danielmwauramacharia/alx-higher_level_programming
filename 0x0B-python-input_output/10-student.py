@@ -15,12 +15,12 @@ class Student():
         """"Returns the attributes of an instance in a dict"""
         data = vars(self)
         data_copy = dict(data)
+        data_list = {}
         if isinstance(attr, list):
             if len(attr) != 0:
                 for item in attr:
-                    for key in data_copy:
-                        if key != item:
-                            del data_copy[key]
-                return data_copy
-            return data
+                    for key, value in data_copy.values():
+                        if key == item:
+                            data_list.update({key: value})
+                return data_list
         return data

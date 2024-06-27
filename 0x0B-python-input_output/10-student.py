@@ -14,13 +14,12 @@ class Student():
     def to_json(self, attr=None):
         """"Returns the attributes of an instance in a dict"""
         data = vars(self)
-        data_copy = dict(data)
-        data_list = {}
-        if isinstance(attr, list):
-            if len(attr) != 0:
-                for item in attr:
-                    for key, value in data_copy.items():
-                        if key == item:
-                            data_list.update({key: value})
-                return data_list
+        if isinstance(attr, list) and len(attr) > 1:
+            data_copy = dict(data)
+            data_list = {}
+            for item in attr:
+                for key, value in data_copy.items():
+                    if key == item:
+                        data_list.update({key: value})
+            return data_list
         return data

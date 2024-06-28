@@ -12,8 +12,5 @@ if __name__ == "__main__":
         argList = load_from_json_file(filename)
     except json.JSONDecodeError:
         argList = []
-    if len(sys.argv) > 1:
-        sysList = sys.argv[1:]
-        for item in sysList:
-            argList.append(item)
+    argList.extend(sys.argv[1:])
     save_to_json_file(argList, filename)

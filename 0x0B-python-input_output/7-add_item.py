@@ -10,7 +10,7 @@ if __name__ == "__main__":
     filename = "add_item.json"
     try:
         argList = load_from_json_file(filename)
-    except json.JSONDecodeError:
+    except (json.JSONDecodeError, FileNotFoundError):
         argList = []
     argList.extend(sys.argv[1:])
     save_to_json_file(argList, filename)

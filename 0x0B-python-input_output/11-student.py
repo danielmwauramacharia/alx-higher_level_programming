@@ -31,13 +31,6 @@ class Student():
         Json containind student attributes
         Those attributes creates a new student object
         """
-        data = vars(self)
-        dataList = []
-        for key in data.keys():
-            dataList.append(key)
-        for item in dataList:
-            for kiy, val in json.items():
-                delattr(self, item)
-                setattr(self, kiy, val)
-                break
+        for key, val in json.items():
+            setattr(self, key, val)
         return self

@@ -35,11 +35,9 @@ class Student():
         dataList = []
         for key in data.keys():
             dataList.append(key)
-        for _, x in enumerate(dataList):
+        for item in dataList:
             for kiy, val in json.items():
-                if hasattr(self, x):
-                    delattr(self, x)
-                    setattr(self, kiy, val)
-                else:
-                    continue
+                delattr(self, item)
+                setattr(self, kiy, val)
+                break
         return self

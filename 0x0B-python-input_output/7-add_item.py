@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Module that add CL arguments to a list"""
+""" Module that add CL arguments to a list and then to a file"""
 import json
 import sys
 if __name__ == "__main__":

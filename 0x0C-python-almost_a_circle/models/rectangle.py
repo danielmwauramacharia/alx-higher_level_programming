@@ -91,6 +91,6 @@ class Rectangle(Base):
         width_ = str(self.width)
         height_ = str(self.height)
         str_rep += "[" + name + "]" + " " + \
-            "(" + id_ + ")" + "" + x + "/" + y + \
+            "(" + id_ + ")" + " " + x + "/" + y + \
             " " + "-" + " " + width_ + "/" + height_
         return str_rep.strip()

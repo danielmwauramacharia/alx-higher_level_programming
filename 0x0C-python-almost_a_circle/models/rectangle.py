@@ -80,3 +80,16 @@ class Rectangle(Base):
             for _ in range(self.width):
                 print("#", end="")
             print()
+
+    def __str__(self):
+        """Override method to print the details of the rectangle"""
+        str_rep = ""
+        name = type(self).__name__
+        id_ = str(self.id)
+        x = str(self.x)
+        y = str(self.y)
+        width_ = str(self.width)
+        height_ = str(self.height)
+        str_rep += name + "(" + id_ + ")" + "<" + x + ">" + "/" + \
+            "<" + y + "<" + "-" + "<" + width_ + "/" + height_
+        return str_rep.strip()

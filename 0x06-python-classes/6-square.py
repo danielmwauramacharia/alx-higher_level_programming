@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+##!/usr/bin/python3
 """Defining a Square"""
 
 
@@ -44,15 +44,14 @@ class Square:
         return self.__size * self.__size
 
     def my_print(self):
-        """Print a square using #"""
-        if self.__size > 0:
-            for i in range(self.__position[1]):
-                print()
-            for i in range(self.__size):
-                for value in range(self.__position[0]):
-                    print(" ", end='')
-                for x in range(self.__size):
-                    print('#', end='')
-                print()
-        else:
+        """Print a square using #, and ajusted as to the position"""
+        if self.__size == 0:
+            print()
+        for _ in range(self.__position[1]):
+            print()
+        for _ in range(self.__size):
+            for _ in range(self.__position[0]):
+                print(" ", end='')
+            for _ in range(self.__size):
+                print('#', end='')
             print()

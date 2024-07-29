@@ -1,7 +1,7 @@
-#!/usr/bin/python3
+##!/usr/bin/python3
 """Square module and inherits from Rectangle class"""
-from models.rectangle import Rectangle
-# Rectangle = __import__('rectangle').Rectangle
+# from models.rectangle import Rectangle
+Rectangle = __import__('rectangle').Rectangle
 
 
 class Square(Rectangle):
@@ -31,3 +31,29 @@ class Square(Rectangle):
             "(" + id_ + ")" + " " + x + "/" + y + \
             " " + "-" + " " + width_
         return str_rep.strip()
+
+    @property
+    def size(self):
+        """Return the controlled value of size
+
+        Returns:
+            int: The size of the square.
+        """
+        return self.__size
+
+    @size.setter
+    def size(self, value):
+        """Setting the size of the square
+
+        Args:
+            value (int): The size to be set.
+
+        Raises:
+            TypeError: If the size is not an integer.
+            ValueError: If the size is not greater than 0.
+        """
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
+        self.__size = value

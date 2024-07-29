@@ -1,7 +1,7 @@
-##!/usr/bin/python3
+#!/usr/bin/python3
 """Square module and inherits from Rectangle class"""
-# from models.rectangle import Rectangle
-Rectangle = __import__('rectangle').Rectangle
+from models.rectangle import Rectangle
+# Rectangle = __import__('rectangle').Rectangle
 
 
 class Square(Rectangle):

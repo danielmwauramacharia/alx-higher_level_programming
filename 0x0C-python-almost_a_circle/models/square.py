@@ -9,11 +9,11 @@ class Square(Rectangle):
 
     def __init__(self, size, x=0, y=0, id=None):
         """The class constructor: gets attributes from the class Rectangle"""
-        super().__init__(size, size, x=0, y=0, id=None)
         self.size = size
         self.x = x
         self.y = y
-        # self.id = id
+        self.id = id
+        super().__init__(self.size, self.size, self.x, self.y, self.id)
 
     def __str__(self):
         """Override method to print the details of the Square

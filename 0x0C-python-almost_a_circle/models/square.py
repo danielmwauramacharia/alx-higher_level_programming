@@ -9,11 +9,11 @@ class Square(Rectangle):
 
     def __init__(self, size, x=0, y=0, id=None):
         """The class constructor: gets attributes from the class Rectangle"""
-        self.size = size
-        self.x = x
-        self.y = y
-        self.id = id
-        super().__init__(self.size, self.size, self.x, self.y, self.id)
+        # self.size = size
+        # self.x = x
+        # self.y = y
+        # self.id = id
+        super().__init__(size, size, x, y, id)
 
     def __str__(self):
         """Override method to print the details of the Square
@@ -39,7 +39,7 @@ class Square(Rectangle):
         Returns:
             int: The size of the square.
         """
-        return self.__size
+        return self.width
 
     @size.setter
     def size(self, value):
@@ -56,4 +56,5 @@ class Square(Rectangle):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
-        self.__size = value
+        self.width = value
+        self.height = value

@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+##!/usr/bin/python3
 """The base module"""
 import json
 
@@ -20,4 +20,4 @@ class Base():
         """Return JSON string representation of list_dictionaries"""
         if list_dictionaries:
             return json.dumps(list_dictionaries)
-        return []
+        return "[]"

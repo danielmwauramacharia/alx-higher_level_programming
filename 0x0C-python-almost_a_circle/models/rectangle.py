@@ -13,8 +13,8 @@ class Rectangle(Base):
         Args:
             width (int): The width of the rectangle.
             height (int): The height of the rectangle.
-            x (int, optional): The x coordinate of the rectangle. Defaults to 0.
-            y (int, optional): The y coordinate of the rectangle. Defaults to 0.
+            x (int, optional): The x coordinate of the rectangle.
+            y (int, optional): The y coordinate of the rectangle.
             id (int, optional): The id of the rectangle. Defaults to None.
         """
         self.width = width
@@ -168,7 +168,7 @@ class Rectangle(Base):
         """Update the attributes using non keyword values and keyworded values
 
         Args:
-            *args: Non-keyword arguments to update attributes in the order: id, width, height, x, y.
+            *args: Non-keyword arguments to update attributes.
             **kwargs: Keyword arguments to update attributes by name.
         """
         if args is not None and len(args) != 0:

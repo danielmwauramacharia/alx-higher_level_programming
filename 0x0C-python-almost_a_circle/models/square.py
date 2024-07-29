@@ -1,7 +1,7 @@
-#!/usr/bin/python3
+##!/usr/bin/python3
 """Square module and inherits from Rectangle class"""
-from models.rectangle import Rectangle
-# Rectangle = __import__('rectangle').Rectangle
+# from models.rectangle import Rectangle
+Rectangle = __import__('rectangle').Rectangle
 
 
 class Square(Rectangle):
@@ -58,3 +58,21 @@ class Square(Rectangle):
             raise ValueError("width must be > 0")
         self.width = value
         self.height = value
+
+    def update(self, *args, **kwargs):
+        """Update the attributes using non keyword values and keyworded values
+
+        Args:
+            *args: Non-keyword arguments to update attributes.
+            **kwargs: Keyword arguments to update attributes by name.
+        """
+        if args is not None and len(args) != 0:
+            attributes = ["id", "size", "x", "y"]
+            c_attr = list(args)
+            length = len(c_attr)
+            length = min(length, 5)
+            for i in range(length):
+                setattr(self, attributes[i], c_attr[i])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)

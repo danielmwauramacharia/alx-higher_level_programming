@@ -1,4 +1,4 @@
-##!/usr/bin/python3
+#!/usr/bin/python3
 """Rectangle module and inherits from Base class"""
 from models.base import Base
 # Base = __import__('base').Base

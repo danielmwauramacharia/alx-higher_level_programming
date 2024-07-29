@@ -21,7 +21,8 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
-        Base.__init__(self, id)
+        self.id = id
+        super().__init__(self.id)
 
     @property
     def width(self):
@@ -181,3 +182,13 @@ class Rectangle(Base):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """Returns dictionary representation of the Rectangle"""
+        return {
+            'id': self.id,
+            'width': self.width,
+            'height': self.height,
+            'x': self.x,
+            'y': self.y
+        }

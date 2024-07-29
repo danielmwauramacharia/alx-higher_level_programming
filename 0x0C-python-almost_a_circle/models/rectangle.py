@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+##!/usr/bin/python3
 """Rectangle module and inherits from Base class"""
 from models.base import Base
 # Base = __import__('base').Base
@@ -100,11 +100,15 @@ class Rectangle(Base):
             " " + "-" + " " + width_ + "/" + height_
         return str_rep.strip()
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Update the attributes using non keyword values"""
-        attributes = ["id", "width", "height", "x", "y"]
-        c_attr = list(args)
-        length = len(c_attr)
-        length = min(length, 5)
-        for i in range(length):
-            setattr(self, attributes[i], c_attr[i])
+        if args is not None and len(args) != 0:
+            attributes = ["id", "width", "height", "x", "y"]
+            c_attr = list(args)
+            length = len(c_attr)
+            length = min(length, 5)
+            for i in range(length):
+                setattr(self, attributes[i], c_attr[i])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)

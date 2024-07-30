@@ -40,7 +40,7 @@ class Base():
 
     @staticmethod
     def from_json_string(json_string):
-        """A method that coverts a JSON string representation to a python List"""
+        """A method that coverts a JSON string to a python list"""
         if json_string is not None:
             file_list = json.loads(json_string)
             return file_list

@@ -61,12 +61,13 @@ class Base():
     def load_from_file(cls):
         """A JSON file that creates instances and return them as a list"""
         instances = []
-        if os.path.exists(f"{cls.__name__}.json") and os.path.getsize(f"{cls.__name__}.json") != 0:
-            with open(f"{cls.__name__}.json", mode="r", encoding="utf8") as file:
+        if os.path.exists(f"{cls.__name__}.json") \
+                and os.path.getsize(f"{cls.__name__}.json") != 0:
+            with open(f"{cls.__name__}.json", mode="r", encoding="utf8") \
+                    as file:
                 file_list = file.read()
             dict_list = cls.from_json_string(file_list)
             for dict_attr in dict_list:
                 instance_created = cls.create(**dict_attr)
-                # instance_dict = to_dictionary(instance_created)
                 instances.append(instance_created)
         return instances

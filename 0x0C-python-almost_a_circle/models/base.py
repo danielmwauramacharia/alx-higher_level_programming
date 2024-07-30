@@ -36,7 +36,9 @@ class Base():
                 file.write("[]")
             else:
                 list_dict = [obj.to_dictionary() for obj in list_objs]
-                file.write(cls.to_json_string(list_dict))
+                list_str = cls.to_json_string(list_dict)
+                with open(filename, mode="w", encoding="utf8") as file:
+                    file.write(list_str)
         return filename
 
     @staticmethod

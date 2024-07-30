@@ -92,7 +92,8 @@ class Base():
         """Deserialize a csv file and create instances"""
         filename = f"{cls.__name__}.csv"
         try:
-            with open(filename, mode="r", newline="", encoding="utf-8") as fileObj:
+            with open(filename, mode="r", newline="", encoding="utf-8") \
+                    as fileObj:
                 if cls.__name__ == "Rectangle":
                     fieldnames = ["id", "width", "height", "x", "y"]
                 else:
@@ -101,6 +102,7 @@ class Base():
                 list_create = [
                     dict([key, int(value)] for key, value in dicts.items())
                     for dicts in list_dict]
-                return [cls.create(**dict_create) for dict_create in list_create]
+                return [cls.create(**dict_create)
+                        for dict_create in list_create]
         except IOError:
             return []

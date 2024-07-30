@@ -2,6 +2,7 @@
 """The base module"""
 import json
 import os
+import csv
 
 
 class Base():
@@ -71,3 +72,35 @@ class Base():
                 instance_created = cls.create(**dict_attr)
                 instances.append(instance_created)
         return instances
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Serialization of a CSV file"""
+        filename = f"{cls.__name__}.csv"
+        with open(filename, mode="w", newline="", encoding="utf-8") as fileObj:
+            if list_objs:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldnames = ["id", "size", "x", "y"]
+                write = csv.DictWriter(fileObj, fieldnames=fieldnames)
+                for obj in list_objs:
+                    write.writerow(obj.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Deserialize a csv file and create instances"""
+        filename = f"{cls.__name__}.csv"
+        try:
+            with open(filename, mode="r", newline="", encoding="utf-8") as fileObj:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldnames = ["id", "size", "x", "y"]
+                list_dict = csv.DictReader(fileObj, fieldnames=fieldnames)
+                list_create = [
+                    dict([key, int(value)] for key, value in dicts.items())
+                    for dicts in list_dict]
+                return [cls.create(**dict_create) for dict_create in list_create]
+        except IOError:
+            return []

@@ -45,3 +45,13 @@ class Base():
             file_list = json.loads(json_string)
             return file_list
         return []
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Creates a new instance from already an existing one"""
+        if cls.__name__ == "Rectangle":
+            new_instance = cls(12, 13)
+        else:
+            new_instance = cls(10)
+        new_instance.update(**dictionary)
+        return new_instance

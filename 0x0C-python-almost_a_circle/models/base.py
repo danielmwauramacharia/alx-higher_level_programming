@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """The base module"""
 import json
+import os
 
 
 class Base():
@@ -55,3 +56,16 @@ class Base():
             new_instance = cls(10)
         new_instance.update(**dictionary)
         return new_instance
+
+    @classmethod
+    def load_from_file(cls):
+        """A JSON file that creates instances and return them as a list"""
+        filename = f"{cls.__name__}.json"
+        instances = []
+        if os.path.exists(filename) and os.path.getsize(filename) != 0:
+            with open(filename, mode="r", encoding="utf8") as file:
+                file_list = file.read()
+            dict_list = cls.from_json_string(file_list)
+            for dict_attr in dict_list:
+                return instances.append(cls.create(**dict_attr))
+        return instances

@@ -37,9 +37,7 @@ class Base():
             else:
                 list_dict = [obj.to_dictionary() for obj in list_objs]
                 list_str = cls.to_json_string(list_dict)
-                with open(filename, mode="w", encoding="utf8") as file:
-                    file.write(list_str)
-        return filename
+                file.write(list_str)
 
     @staticmethod
     def from_json_string(json_string):
@@ -62,12 +60,13 @@ class Base():
     @classmethod
     def load_from_file(cls):
         """A JSON file that creates instances and return them as a list"""
-        filename = f"{cls.__name__}.json"
         instances = []
-        if os.path.exists(filename) and os.path.getsize(filename) != 0:
-            with open(filename, mode="r", encoding="utf8") as file:
+        if os.path.exists(f"{cls.__name__}.json") and os.path.getsize(f"{cls.__name__}.json") != 0:
+            with open(f"{cls.__name__}.json", mode="r", encoding="utf8") as file:
                 file_list = file.read()
             dict_list = cls.from_json_string(file_list)
             for dict_attr in dict_list:
-                return instances.append(cls.create(**dict_attr))
+                instance_created = cls.create(**dict_attr)
+                # instance_dict = to_dictionary(instance_created)
+                instances.append(instance_created)
         return instances
